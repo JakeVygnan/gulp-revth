@@ -1,19 +1,17 @@
 {
-  "name": "gulp-rev",
+  "name": "gulp-revth",
   "version": "3.0.1",
   "description": "Static asset revisioning by appending content hash to filenames: unicorn.css => unicorn-098f6bcd.css",
   "license": "MIT",
-  "repository": "sindresorhus/gulp-rev",
+  "repository": "https://github.com/JakeVygnan/gulp-revth.git",
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "name": "Jake Vygnan",
+      "email": "jake.vygnan@gmail.com"
   },
   "maintainers": [
     {
-      "name": "Justin Hileman",
-      "email": "justin@justinhileman.info",
-      "url": "http://justinhileman.info"
+      "name": "Jake Vygnan",
+      "email": "jake.vygnan@gmail.com"
     }
   ],
   "engines": {

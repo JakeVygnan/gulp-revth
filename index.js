@@ -6,8 +6,9 @@ var through = require('through2');
 var objectAssign = require('object-assign');
 var file = require('vinyl-file');
 
-function md5(str) {
-	return crypto.createHash('md5').update(str).digest('hex');
+function timestamp(str) {
+        var stamp = (new Date).getFullYear().toString() + '_' +  ((new Date).getMonth() + 1).toString() + '_' +  (new Date).getDate().toString() + '_' + (new Date).getHours().toString() + (new Date).getMinutes().toString() + '_' + (new Date).getSeconds();
+    return stamp;
 }
 
 function relPath(base, filePath) {
@@ -46,7 +47,7 @@ function transformFilename(file) {
 	file.revOrigPath = file.path;
 	file.revOrigBase = file.base;
 
-	var hash = file.revHash = md5(file.contents).slice(0, 8);
+	var hash = file.revHash = timestamp(file.contents);
 	var ext = path.extname(file.path);
 	var filename = path.basename(file.path, ext) + '-' + hash + ext;
 	file.path = path.join(path.dirname(file.path), filename);
