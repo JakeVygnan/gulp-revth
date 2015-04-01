@@ -7,8 +7,23 @@ var objectAssign = require('object-assign');
 var file = require('vinyl-file');
 
 function timestamp(str) {
-        var stamp = (new Date).getFullYear().toString() + '_' +  ((new Date).getMonth() + 1).toString() + '_' +  (new Date).getDate().toString() + '_' + (new Date).getHours().toString() + (new Date).getMinutes().toString() + '_' + (new Date).getSeconds();
+        var stamp = (new Date).getFullYear().toString() + '-' 
+        +  prefixZero(((new Date).getMonth() + 1).toString()) + '-' 
+        +  prefixZero((new Date).getDate().toString()) + '-' 
+        +  prefixZero((new Date).getHours().toString())+ '-' 
+        +  prefixZero((new Date).getMinutes().toString()) + '-' 
+        + prefixZero((new Date).getSeconds().toString());
     return stamp;
+}
+
+function prefixZero(argument){
+    var v = argument;
+
+    if (v.length < 2) {
+        v = '0' + v; 
+    }
+    return v;
+
 }
 
 function relPath(base, filePath) {
