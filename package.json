@@ -1,7 +1,7 @@
 {
   "name": "gulp-revth",
-  "version": "3.0.1",
-  "description": "Static asset revisioning by appending content hash to filenames: unicorn.css => unicorn-098f6bcd.css",
+  "version": "4.2.1",
+  "description": "Static asset revisioning by appending content hash to filenames: unicorn.css => unicorn-2015_01_02_03_04_45.css",
   "license": "MIT",
   "repository": "https://github.com/JakeVygnan/gulp-revth.git",
   "author": {
