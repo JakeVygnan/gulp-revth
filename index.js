@@ -7,13 +7,15 @@ var objectAssign = require('object-assign');
 var file = require('vinyl-file');
 
 function timestamp(str) {
-        var stamp = (new Date).getFullYear().toString() + '_'
-        + prefixZero(((new Date).getMonth() + 1).toString()) + '_' 
-        + prefixZero((new Date).getDate().toString()) + '_' 
-        + prefixZero((new Date).getHours().toString())+ '_' 
-        + prefixZero((new Date).getMinutes().toString()) + '_' 
-        + prefixZero((new Date).getSeconds().toString());
-    return stamp;
+        var stamp = prefixZero(((new Date).getMonth() + 1).toString())
+        + prefixZero((new Date).getDate().toString()) + '-'
+        + prefixZero((new Date).getHours().toString())
+        + prefixZero((new Date).getMinutes().toString());
+    return md5(str).slice(0,3) + '-' + stamp;
+}
+
+function md5(str) {
+    return crypto.createHash('md5').update(str).digest('hex');
 }
 
 function prefixZero(argument){
